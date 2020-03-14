@@ -1,6 +1,7 @@
 package main;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -13,17 +14,26 @@ import javax.swing.Timer;
 import brickbreaker.entity.Ball;
 import brickbreaker.entity.Block;
 import brickbreaker.entity.Board;
+import brickbreaker.entity.Border;
 
 public class BrickBreakerPanel extends JPanel implements ActionListener, KeyListener{
 	private BrickBreaker game;
 	private Ball ball;
 	private Board board;
 	private List<Block> blocks;
+	private Border leftBorder;
+	private Border topBorder;
+	private Border rightBorder;
+	
 	public BrickBreakerPanel(BrickBreaker game) {
 		setBackground(Color.WHITE);
 		this.game = game;
 		ball = new Ball(game);
 		board = new Board(game, KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, game.getWidth());
+		leftBorder = new Border(0,0,1,game.getHeight());
+		topBorder = new Border(0,0,game.getWidth(),1);
+		rightBorder = new Border(game.getWidth() - 1, 0,game.getWidth(),game.getHeight());
+
 		Timer timer = new Timer(5, this);
 		timer.start();
 		addKeyListener(this);
@@ -35,9 +45,19 @@ public class BrickBreakerPanel extends JPanel implements ActionListener, KeyList
 	public Board getBoard() {
 		return board;
 	}
+	public Border getLeftBorder() {
+		return leftBorder;
+	}
+	public Border getRightBorder() {
+		return rightBorder;
+	}
+	public Border getTopBorder() {
+		return topBorder;
+	}
+	
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO nothing to do
+		board.pressed(e.getKeyCode());
 		
 	}
 

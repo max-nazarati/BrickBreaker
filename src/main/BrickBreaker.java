@@ -34,4 +34,8 @@ public class BrickBreaker extends JFrame {
 	public int getHeight(){
 		return HEIGHT;
 	}
+	
+	public BrickBreakerPanel getPanel() {
+		return panel;
+	}
 }
