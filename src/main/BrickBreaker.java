@@ -8,15 +8,16 @@ public class BrickBreaker extends JFrame {
 	private final static int WIDTH = 700, HEIGHT = 450;
 	private BrickBreakerPanel panel;
 	
-	public BrickBreaker() {
+	private BrickBreaker() {
 		setSize(WIDTH, HEIGHT);
 		setTitle("Brick Breaker");
 		setBackground(Color.LIGHT_GRAY);
+		panel = new BrickBreakerPanel(this);
+		add(panel);
 		setResizable(false);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		panel = new BrickBreakerPanel(this);
-		add(panel);
+		
 	}
 	
 	public static void main(String[] args) {

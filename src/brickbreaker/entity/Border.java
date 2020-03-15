@@ -10,5 +10,4 @@ public class Border {
 	public Rectangle getBounds() {
 		return bounds;
 	}
-
 }

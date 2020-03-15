@@ -15,16 +15,12 @@ public class Ball {
 	private BrickBreaker game;
 	private float dx = 0.5f;
 	private float dy = 0.5f;
-	private final Board board;
-	private final Border leftBorder;
-	private final Border topBorder;
-	private final Border rightBorder;
+	private Board board;
+	private Border leftBorder;
+	private Border topBorder;
+	private Border rightBorder;
 	public Ball(BrickBreaker game) {
 		this.game = game;
-		leftBorder = game.getPanel().getLeftBorder();
-		topBorder = game.getPanel().getTopBorder();
-		rightBorder = game.getPanel().getRightBorder();
-		board = game.getPanel().getBoard();
 	}
 	
 	public void update() {
@@ -34,6 +30,10 @@ public class Ball {
 	}
 	
 	private void checkCollision() {
+		leftBorder = game.getPanel().getLeftBorder();
+		topBorder = game.getPanel().getTopBorder();
+		rightBorder = game.getPanel().getRightBorder();
+		board = game.getPanel().getBoard();
 		if (board.getBounds().intersects(getBounds()))
 			changeDy(-1);
 		if (leftBorder.getBounds().intersects(getBounds()))

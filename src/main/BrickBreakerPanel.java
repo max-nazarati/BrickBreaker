@@ -28,11 +28,11 @@ public class BrickBreakerPanel extends JPanel implements ActionListener, KeyList
 	public BrickBreakerPanel(BrickBreaker game) {
 		setBackground(Color.WHITE);
 		this.game = game;
-		ball = new Ball(game);
 		board = new Board(game, KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, game.getWidth());
-		leftBorder = new Border(0,0,1,game.getHeight());
+		this.leftBorder = new Border(0,0,1,game.getHeight());
 		topBorder = new Border(0,0,game.getWidth(),1);
 		rightBorder = new Border(game.getWidth() - 1, 0,game.getWidth(),game.getHeight());
+		ball = new Ball(game);
 
 		Timer timer = new Timer(5, this);
 		timer.start();
