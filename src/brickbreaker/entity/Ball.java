@@ -92,6 +92,6 @@ public class Ball {
 		return new Rectangle(Math.round(x), Math.round(y), width, height);
 	}
 	public void paint(Graphics g) {
-		((Graphics2D)g).fill(new Ellipse2D.Double(Math.round(x), Math.round(y), width, height));
+		((Graphics2D)g).fill(new Ellipse2D.Double(x, y, width, height));
 	}
 }

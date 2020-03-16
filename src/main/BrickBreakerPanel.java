@@ -36,7 +36,7 @@ public class BrickBreakerPanel extends JPanel implements ActionListener, KeyList
 		blocks = setupBlocks();
 		ball = new Ball(game);
 
-		timer = new Timer(5, this);
+		timer = new Timer(3, this);
 		timer.start();
 		addKeyListener(this);
 		setFocusable(true);
