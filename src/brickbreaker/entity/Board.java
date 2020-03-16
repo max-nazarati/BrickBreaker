@@ -10,7 +10,7 @@ import main.BrickBreaker;
 
 public class Board extends JComponent {
 	private static final int width = 80, height = 10;
-	private int x = 290, y = 390;
+	private int x = 290, y = 350;
 	private int xd = 0;
 	private BrickBreaker game;
 	private int speed = 1;

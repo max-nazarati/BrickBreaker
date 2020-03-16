@@ -8,14 +8,14 @@ import javax.swing.SwingUtilities;
 
 public class BrickBreaker extends JFrame {
 	private final static int WIDTH = 700, HEIGHT = 450;
-	private BrickBreakerPanel panel;
+	BrickBreakerPanel gamePanel;
 	
-	private BrickBreaker() {
+	BrickBreaker() {
 		setSize(WIDTH, HEIGHT);
 		setTitle("Brick Breaker");
 		setBackground(Color.LIGHT_GRAY);
-		panel = new BrickBreakerPanel(this);
-		add(panel);
+		gamePanel = new BrickBreakerPanel(this);
+		add(gamePanel);
 		add(new MenuPanel(this), BorderLayout.SOUTH);
 		setResizable(false);
 		setVisible(true);
@@ -40,6 +40,6 @@ public class BrickBreaker extends JFrame {
 	}
 	
 	public BrickBreakerPanel getPanel() {
-		return panel;
+		return gamePanel;
 	}
 }

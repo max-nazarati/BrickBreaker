@@ -24,7 +24,7 @@ public class BrickBreakerPanel extends JPanel implements ActionListener, KeyList
 	private Border leftBorder;
 	private Border topBorder;
 	private Border rightBorder;
-	private Timer timer;
+	Timer timer;
 	
 	public BrickBreakerPanel(BrickBreaker game) {
 		setBackground(Color.WHITE);
@@ -42,9 +42,6 @@ public class BrickBreakerPanel extends JPanel implements ActionListener, KeyList
 		setFocusable(true);
 	}
 	
-	public Timer getTimer() {
-		return timer;
-	}
 	public Ball getBall() {
 		return ball;
 	}

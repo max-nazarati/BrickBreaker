@@ -30,22 +30,25 @@ public class MenuPanel extends JPanel implements ActionListener {
 		
 		pauseButton = new JButton("PAUSE");
 		pauseButton.addActionListener(this);
+		newGameButton.addActionListener(this);
 		
 		add(pauseButton);
 		add(newGameButton);
 		Timer timer = new Timer(100, this);
 		timer.start();
 		setFocusable(true);
-
 	}
 	
 	private void checkButtons(ActionEvent e) {
 		if (e.getSource() == pauseButton) {
-			if (game.getPanel().getTimer().isRunning()) {
-				game.getPanel().getTimer().stop();
+			if (game.gamePanel.timer.isRunning()) {
+				game.gamePanel.timer.stop();
 				return;
 			}
-			game.getPanel().getTimer().restart();
+			game.gamePanel.timer.restart();
+		}
+		if (e.getSource() == newGameButton) {
+			game = new BrickBreaker();
 		}
 	}
 	private void update(ActionEvent e) {
