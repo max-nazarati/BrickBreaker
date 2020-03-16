@@ -16,11 +16,11 @@ public class Block {
 	public Block(int x, int y) {
 		this.x = x;
 		this.y = y;
-		topEdge = new Line2D.Double(x, y, x + width + gap, y+ gap);
-		rightEdge = new Line2D.Double(x + width, y, x + width+ gap, y + height+ gap);
-		bottomEdge = new Line2D.Double(x, y + height, x + width+ gap, y + height+ gap);
-		leftEdge = new Line2D.Double(x, y, x+ gap, y + height+ gap);
-		bounds = new Rectangle(x, y, width+ gap, height+ gap);
+		topEdge = new Line2D.Double(x, y, x + width + gap- 1, y+ gap- 1);
+		rightEdge = new Line2D.Double(x + width, y, x + width+ gap- 1, y + height+ gap- 1);
+		bottomEdge = new Line2D.Double(x, y + height, x + width+ gap- 1, y + height+ gap- 1);
+		leftEdge = new Line2D.Double(x, y, x+ gap- 1, y + height+ gap - 1);
+		bounds = new Rectangle(x, y, width+ gap- 1, height+ gap- 1);
 	}
 	
 	public Line2D.Double getBottomEdge() {
