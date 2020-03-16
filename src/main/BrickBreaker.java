@@ -1,6 +1,8 @@
 package main;
+import java.awt.BorderLayout;
 import java.awt.Color;
 
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
@@ -14,6 +16,7 @@ public class BrickBreaker extends JFrame {
 		setBackground(Color.LIGHT_GRAY);
 		panel = new BrickBreakerPanel(this);
 		add(panel);
+		add(new MenuPanel(this), BorderLayout.SOUTH);
 		setResizable(false);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
