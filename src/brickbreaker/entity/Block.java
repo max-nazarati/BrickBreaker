@@ -9,7 +9,7 @@ import main.BrickBreaker;
 
 public class Block {
 	private BrickBreaker game;
-	public static final int width = 100, height = 30, gap = 4;
+	public static final int width = 100, height = 30, gap = 0;
 	private Rectangle bounds;
 	private int x, y;
 	private Line2D.Double topEdge, rightEdge, bottomEdge, leftEdge;
@@ -42,11 +42,7 @@ public class Block {
 	public Rectangle getBounds() {
 		return bounds;
 	}
-	
-	public void update() {
-		this.game = game;
-	}
-	
+
 	public void paint(Graphics g) {
 		g.fillRect(x, y, width, height);
 	}

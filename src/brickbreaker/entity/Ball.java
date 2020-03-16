@@ -5,6 +5,7 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.geom.Ellipse2D;
 import java.util.List;
+import java.util.Random;
 
 import main.BrickBreaker;
 
@@ -13,8 +14,8 @@ public class Ball {
 	private enum ColSide {
 		right, left, bottom, top
 	}
-	private static final int width = 10, height = 10;
-	private float x = 10, y = 10;
+	private static final int width = 15, height = 15;
+	private float x, y = 200;
 	private BrickBreaker game;
 	private float dx = 0.5f;
 	private float dy = 0.5f;
@@ -25,6 +26,7 @@ public class Ball {
 	private List<Block> blocks;
 	public Ball(BrickBreaker game) {
 		this.game = game;
+		x = new Random().nextInt(game.getWidth());
 	}
 	
 	public void update() {
