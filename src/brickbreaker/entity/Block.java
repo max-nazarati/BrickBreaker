@@ -9,7 +9,7 @@ import main.BrickBreaker;
 
 public class Block {
 	private BrickBreaker game;
-	public static final int width = 100, height = 30, gap = 2;
+	public static final int width = 100, height = 30, gap = 4;
 	private Rectangle bounds;
 	private int x, y;
 	private Line2D.Double topEdge, rightEdge, bottomEdge, leftEdge;

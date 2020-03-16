@@ -1,7 +1,9 @@
 package brickbreaker.entity;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.geom.Ellipse2D;
 import java.util.List;
 
 import main.BrickBreaker;
@@ -46,7 +48,9 @@ public class Ball {
 			changeDy(-1);
 		if (rightBorder.getBounds().intersects(getBounds()))
 			changeDx(-1);
-		
+		if (y >= game.getHeight()) {
+			game.getPanel().getBlocks().clear();
+		}
 		checkBlockCollision();
 	}
 	
@@ -86,6 +90,6 @@ public class Ball {
 		return new Rectangle(Math.round(x), Math.round(y), width, height);
 	}
 	public void paint(Graphics g) {
-		g.fillRect(Math.round(x), Math.round(y), width, height);
+		((Graphics2D)g).fill(new Ellipse2D.Double(Math.round(x), Math.round(y), width, height));
 	}
 }
