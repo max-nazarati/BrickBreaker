@@ -47,20 +47,31 @@ public class Ball {
 		if (rightBorder.getBounds().intersects(getBounds()))
 			changeDx(-1);
 		
+		checkBlockCollision();
+	}
+	
+	private void checkBlockCollision() {
+		Block b = null;
 		for (Block block : blocks) {
 			if (block.getTopEdge().intersects(getBounds())) {
 				changeDy(-1);
+				b = block;
 			}
 			else if (block.getRightEdge().intersects(getBounds())){
+				b = block;
 				changeDx(-1);
 			}
 			else if (block.getBottomEdge().intersects(getBounds())) {
+				b = block;
 				changeDy(-1);
 			}
 			else if (block.getLeftEdge().intersects(getBounds())) {
+				b = block;
 				changeDx(-1);
 			}
 		}
+		if (b != null)
+			game.getPanel().getBlocks().remove(b);
 	}
 	
 	public void changeDx(int factor) {
