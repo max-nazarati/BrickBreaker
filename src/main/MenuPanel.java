@@ -18,6 +18,7 @@ public class MenuPanel extends JPanel implements ActionListener {
 	private BrickBreaker game;
 	private JButton newGameButton;
 	private JButton pauseButton;
+	private boolean lost = false;
 	
 	public MenuPanel(BrickBreaker game) {
 		this.game = game;
@@ -52,8 +53,12 @@ public class MenuPanel extends JPanel implements ActionListener {
 		}
 	}
 	private void update(ActionEvent e) {
-		if (game.getPanel().getBlocks().isEmpty())
+		if (game.getPanel().getBlocks().isEmpty() && !lost) {
+			lost = !lost;
+			game.gamePanel.timer.stop();
 			newGameButton.setEnabled(true);
+			pauseButton.setEnabled(false);
+		}
 		checkButtons(e);
 	}
 	@Override

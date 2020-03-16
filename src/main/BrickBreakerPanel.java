@@ -103,10 +103,10 @@ public class BrickBreakerPanel extends JPanel implements ActionListener, KeyList
 	private List<Block> setupBlocks(){
 		List<Block> blocks = new ArrayList<Block>();
 		int d = 2;
-		int z = 1;
+		int z = 3;
 		int startX = 80;
 		int startY = 80;
-		for (int i = 0; i <(game.getWidth() + d - 2 * startX) / (Block.width + d); i++){
+		for (int i = 0; i < (game.getWidth() + d - 2 * startX) / (Block.width + d); i++){
 			for (int j = 0; j < z; j++) {
 				blocks.add(new Block(startX + i * (Block.width + d), startY + j * (Block.height + d)));
 			}
