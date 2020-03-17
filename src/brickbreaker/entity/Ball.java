@@ -26,7 +26,7 @@ public class Ball {
 	private List<Block> blocks;
 	public Ball(BrickBreaker game) {
 		this.game = game;
-		x = new Random().nextInt(game.getWidth());
+		x = new Random().nextInt(game.getWidth() - 300) + 100;
 	}
 	
 	public void update() {
